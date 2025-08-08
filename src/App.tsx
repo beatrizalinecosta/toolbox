@@ -18,7 +18,7 @@ const Sidebar = ({ toggleDarkMode, darkMode, show, handleClose }: any) => (
     </Offcanvas.Header>
     <Offcanvas.Body>
       <Nav className="flex-column">
-        <Nav.Link as={NavLink} to="/" onClick={handleClose} className="mb-3 text-black fw-bold bg-white border-black rounded">Home</Nav.Link>
+        <Nav.Link as={NavLink} to="/toolbox" onClick={handleClose} className="mb-3 text-black fw-bold bg-white border-black rounded">Home</Nav.Link>
         <Nav.Link as={NavLink} to="/calculator" onClick={handleClose} className="mb-3 text-black fw-bold bg-white border-black rounded">Calculadora</Nav.Link>
         <Nav.Link as={NavLink} to="/stopwatch" onClick={handleClose} className="mb-3 text-black fw-bold bg-white border-black rounded">Stopwatch</Nav.Link>
         <Nav.Link as={NavLink} to="/pomodoro" onClick={handleClose} className="mb-3 text-black fw-bold bg-white border-black rounded">Pomodoro</Nav.Link>
@@ -41,7 +41,7 @@ const AppRoutes = ({ darkMode, toggleDarkMode }: any) => {
   const location = useLocation();
   const [showSidebar, setShowSidebar] = useState(false);
 
-  const isHome = location.pathname === "/";
+  const isHome = location.pathname === "/toolbox";
 
   return (
     <div className={darkMode ? "bg-dark text-white min-vh-100" : "bg-light text-dark min-vh-100"}>
@@ -62,7 +62,7 @@ const AppRoutes = ({ darkMode, toggleDarkMode }: any) => {
       />
       <Container>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/toolbox" element={<Home />} />
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/stopwatch" element={<Stopwatch />} />
           <Route path="/pomodoro" element={<Pomodoro />} />
